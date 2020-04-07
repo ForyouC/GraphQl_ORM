@@ -1,0 +1,42 @@
+{
+   "name": "MyProject",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/jest": "^25.2.1",
+      "@types/node": "^8.0.29",
+      "@types/uuid": "^7.0.2",
+      "gql2ts": "^1.10.1",
+      "jest": "^25.2.7",
+      "nodemon": "^2.0.2",
+      "ts-jest": "^25.3.1",
+      "ts-node": "3.3.0",
+      "tslint": "^6.1.1",
+      "tslint-config-prettier": "^1.18.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "@types/bcryptjs": "^2.4.2",
+      "bcryptjs": "^2.4.3",
+      "graphql-import": "^1.0.1",
+      "graphql-yoga": "^1.18.3",
+      "mysql": "^2.14.1",
+      "path": "^0.12.7",
+      "reflect-metadata": "^0.1.13",
+      "rxjs": "^6.5.5",
+      "typeorm": "0.2.24",
+      "uuid": "^7.0.3"
+   },
+   "scripts": {
+      "start": "nodemon --exec ts-node src/index.ts",
+      "test": "jest",
+      "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+   },
+   "jest": {
+      "transform": {
+         "^.+\\.tsx?$": "ts-jest"
+      },
+      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+      "moduleFileExtensions": ["ts","tsx","js","jsx","json","node"]
+   }
+}

@@ -9,6 +9,7 @@
       "gql2ts": "^1.10.1",
       "jest": "^25.2.7",
       "nodemon": "^2.0.2",
+      "start-server-and-test": "^1.10.11",
       "ts-jest": "^25.3.1",
       "ts-node": "3.3.0",
       "tslint": "^6.1.1",
@@ -19,8 +20,10 @@
       "@types/bcryptjs": "^2.4.2",
       "bcryptjs": "^2.4.3",
       "cross-env": "^7.0.2",
+      "graphql": "^15.0.0",
       "graphql-import": "^1.0.1",
       "graphql-request": "^1.8.2",
+      "graphql-tools": "^4.0.7",
       "graphql-yoga": "^1.18.3",
       "mysql": "^2.14.1",
       "path": "^0.12.7",
@@ -33,7 +36,8 @@
       "start": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts",
       "test-server": "cross-env NODE_ENV=test ts-node src/index.ts",
       "test": "cross-env NODE_ENV=test jest",
-      "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+      "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts",
+      "ci": "start-server-and-test test-server http://localhost:4000 test"
    },
    "jest": {
       "transform": {

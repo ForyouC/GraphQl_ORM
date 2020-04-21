@@ -8,6 +8,15 @@ export const resolvers: ResolverMap = {
     },
     Mutation: {
         register: async (_, { email, password }: GQL.IRegisterOnMutationArguments) => {
+          const userAlreadyExists = await User.findOne({where: {email}, select: ["id"]});
+          if ( userAlreadyExists ) {
+            return [
+              {
+                path: "email",
+                message: "already taken"
+              }
+            ];
+          }
           const hashedPassword = await bcrypt.hash(password, 10);
           const user = User.create({
             email,
@@ -15,7 +24,7 @@ export const resolvers: ResolverMap = {
           });
 
           await user.save();
-          return true;
+          return null;
         }
     }
 };

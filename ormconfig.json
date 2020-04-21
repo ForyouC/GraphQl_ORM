@@ -33,8 +33,7 @@
       "password": "sky14985",
       "database": "ts_graph_test",
       "synchronize": true,
-      "logging": false,
-      "dropSchema": true,
+      "logging": true,
       "entities": [
          "src/entity/**/*.ts"
       ],

@@ -2,7 +2,7 @@ import { importSchema } from 'graphql-import'
 import { GraphQLServer } from 'graphql-yoga';
 import * as path from "path";
 import * as  fs from 'fs';
-import * as Redis from 'ioredis';
+import * as Redis from "ioredis";
 
 import { mergeSchemas, makeExecutableSchema } from "graphql-tools"
 import { GraphQLSchema } from "graphql";

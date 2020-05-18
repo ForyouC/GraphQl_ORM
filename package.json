@@ -27,9 +27,11 @@
       "graphql-request": "^1.8.2",
       "graphql-tools": "^5.0.0",
       "graphql-yoga": "^1.18.3",
+      "ioredis": "^4.17.1",
       "merge-graphql-schemas": "^1.7.8",
       "mysql": "^2.18.1",
       "path": "^0.12.7",
+      "redis-server": "^1.2.2",
       "reflect-metadata": "^0.1.13",
       "rxjs": "^6.5.5",
       "typeorm": "0.2.24",
@@ -44,6 +46,9 @@
       "ci": "start-server-and-test test-server http://localhost:4000 test"
    },
    "jest": {
+      "setupFiles": [
+         "<rootDir>/src/testSetup/callSetup.js"
+      ],
       "transform": {
          "^.+\\.tsx?$": "ts-jest"
       },

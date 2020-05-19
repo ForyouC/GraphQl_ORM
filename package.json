@@ -46,9 +46,7 @@
       "ci": "start-server-and-test test-server http://localhost:4000 test"
    },
    "jest": {
-      "setupFiles": [
-         "<rootDir>/src/testSetup/callSetup.js"
-      ],
+      "setupFiles": ["<rootDir>/src/testSetup/callSetup.js"],
       "transform": {
          "^.+\\.tsx?$": "ts-jest"
       },

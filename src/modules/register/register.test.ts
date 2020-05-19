@@ -3,7 +3,7 @@ import { User } from "../../entity/User";
 import { duplicateEmail, emailNotLongEnough, invalidEmail, passwordNotLongEnough } from './errorMessages';
 import { createTypeormConn } from '../../utils/createTypeormConn';
 
-const email = "tom6@fe.com";
+const email = "tom8@fe.com";
 const password = "ja23421";
 
 const mutation = (e: string, p: string) => `
@@ -19,7 +19,7 @@ beforeAll(async () => {
   await createTypeormConn();
 });
 
-describe("Register user", async () => {
+describe("Register user",  () => {
   it("check for duplicate emails", async () => {
     // make sure we can register a user
     const response: any  = await request(process.env.TEST_HOST as string, mutation(email, password));

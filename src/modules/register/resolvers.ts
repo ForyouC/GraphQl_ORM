@@ -4,7 +4,7 @@ import { ResolverMap } from '../../types/graphql-utils';
 import { User } from '../../entity/User';
 import { formatYupError } from '../../utils/formatYupError';
 import { duplicateEmail, emailNotLongEnough, invalidEmail, passwordNotLongEnough } from "./errorMessages"
-import { createConfirmEmailLink } from '../../utils/createConfilmEmailLink';
+import { createConfirmEmailLink } from '../../utils/createConfirmEmailLink';
 
 const schema = yup.object().shape({
   email: yup.string().min(3, emailNotLongEnough).max(255).email(invalidEmail),

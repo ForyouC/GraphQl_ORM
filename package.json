@@ -6,6 +6,7 @@
       "@types/ioredis": "^4.16.2",
       "@types/jest": "^25.2.1",
       "@types/node": "^13.13.0",
+      "@types/node-fetch": "^2.5.7",
       "@types/uuid": "^7.0.2",
       "@types/yup": "^0.28.0",
       "gql2ts": "^1.10.1",
@@ -30,6 +31,7 @@
       "ioredis": "^4.17.1",
       "merge-graphql-schemas": "^1.7.8",
       "mysql": "^2.18.1",
+      "node-fetch": "^2.6.0",
       "path": "^0.12.7",
       "redis-server": "^1.2.2",
       "reflect-metadata": "^0.1.13",
@@ -41,12 +43,14 @@
    "scripts": {
       "start": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts",
       "test-server": "cross-env NODE_ENV=test nodemon --exec ts-node src/index.ts",
-      "test": "cross-env NODE_ENV=test jest --forceExit",
+      "test": "cross-env NODE_ENV=test jest --watch",
       "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts",
       "ci": "start-server-and-test test-server http://localhost:4000 test"
    },
    "jest": {
-      "setupFiles": ["<rootDir>/src/testSetup/callSetup.js"],
+      "setupFiles": [
+         "<rootDir>/src/testSetup/callSetup.js"
+      ],
       "transform": {
          "^.+\\.tsx?$": "ts-jest"
       },
